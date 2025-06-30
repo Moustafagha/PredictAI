@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: predictive-dashboard
+    env: python
+    buildCommand: pip install -r predictive-backend/requirements.txt
+    startCommand: gunicorn predictive-backend/src/main:app
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+
+
