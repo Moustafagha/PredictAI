@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: predictive-dashboard
+    env: python
+    buildCommand: cd predictive-backend && pip install -r requirements.txt
+    startCommand: cd predictive-backend && python src/main.py
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+
