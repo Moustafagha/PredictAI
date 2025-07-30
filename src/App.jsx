@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
+import { Badge } from '../components/ui/badge'
 import { AlertCircle, Activity, Thermometer, Zap, Gauge } from 'lucide-react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import './App.css'
 
-// API base URL - will work with both local development and deployment
-const API_BASE_URL = import.meta.env.DEV ? 'http://localhost:5000/api' : '/api'
+// API base URL - will work with both local development and Vercel deployment
+const API_BASE_URL = import.meta.env.DEV ? 'http://localhost:3000/api' : '/api'
 
 function App() {
   const [machineData, setMachineData] = useState(null)
