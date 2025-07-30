@@ -2,14 +2,14 @@ from flask import Blueprint, request, jsonify
 import random
 import time
 import os
-from src.models.ml_model import PredictiveMaintenanceModel
+from ml_model import PredictiveMaintenanceModel
 
 # Create blueprint
 predict_bp = Blueprint('predict', __name__)
 
 # Initialize ML model
 model = PredictiveMaintenanceModel()
-model_path = os.path.join(os.path.dirname(__file__), '..', 'models', 'trained_model.pkl')
+model_path = os.path.join(os.path.dirname(__file__), 'trained_model.pkl')
 
 # Load or train model
 try:
