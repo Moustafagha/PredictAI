@@ -6,7 +6,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import './App.css'
 
 // API base URL - will work with both local development and deployment
-const API_BASE_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/api' : '/api'
+const API_BASE_URL = import.meta.env.DEV ? 'http://localhost:5000/api' : '/api'
 
 function App() {
   const [machineData, setMachineData] = useState(null)
